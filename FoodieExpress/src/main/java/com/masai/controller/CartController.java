@@ -86,6 +86,7 @@ public class CartController {
 	}
 
 	@DeleteMapping("/removeItem")
+	@CrossOrigin(origins = "http://localhost:3000")
 	public ResponseEntity<FoodCart> removeItemFromCartHandler(@Valid @RequestBody FoodCart foodCart,
 			@Valid @RequestBody Item item) {
 
@@ -96,6 +97,7 @@ public class CartController {
 	}
 
 	@DeleteMapping(value = "/clearCart/{foodCartId}")
+	@CrossOrigin(origins = "http://localhost:3000")
 	public ResponseEntity<FoodCart> cleartCartHandler(@PathVariable Integer foodCartId){
 		
 		FoodCart emptyCart = cartService.clearCart(foodCartId);
