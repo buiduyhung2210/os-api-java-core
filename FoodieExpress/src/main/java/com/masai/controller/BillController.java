@@ -31,7 +31,7 @@ public class BillController {
 	@PostMapping("/bill")
 	@CrossOrigin(origins = "http://localhost:3000")
 	public ResponseEntity<BillDto> registeBillHandler(@RequestBody Bill bill) throws BillException{
-		
+		System.out.println(bill);
 		BillDto bil1 = bService.addBill(bill);
 		
 		

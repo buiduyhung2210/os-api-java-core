@@ -1,5 +1,6 @@
 package com.masai.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -35,6 +36,9 @@ public class Customer {
 	@NotNull(message = "email field should not be null")
 	@Email
 	private String email;
+
+	@Column(columnDefinition = "varchar(255) default 'user'")
+	private String role = "user";
 
 	private String image;
 
